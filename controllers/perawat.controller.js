@@ -25,4 +25,15 @@ module.exports = {
     return res.redirect('/perawat');
   },
 
+  destroy: async (req, res) => {
+    const perawat = await Perawat.findByPk(req.params.id);
+
+    if (!perawat) {
+      return res.redirect('/perawat');
+    }
+
+    await perawat.destroy();
+
+    return res.redirect('/perawat');
+  },
 };

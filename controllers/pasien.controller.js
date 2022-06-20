@@ -25,4 +25,15 @@ module.exports = {
     return res.redirect('/pasien');
   },
 
+  destroy: async (req, res) => {
+    const pasien = await Pasien.findByPk(req.params.id);
+
+    if (!pasien) {
+      return res.redirect('/pasien');
+    }
+
+    await pasien.destroy();
+
+    return res.redirect('/pasien');
+  },
 };
