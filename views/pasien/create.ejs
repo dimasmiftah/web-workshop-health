@@ -1,0 +1,44 @@
+<%- include('../includes/header'); %>
+
+<div class="container">
+  <h1>Create Pasien</h1>
+  <form action="/pasien/create" method="POST">
+    <div class="mb-3">
+      <label for="Nama" class="form-label">Nama</label>
+      <input type="text" class="form-control" id="Nama" name="Nama" />
+    </div>
+    <div class="mb-3">
+      <label for="No_RM" class="form-label">No RM</label>
+      <input
+        type="text"
+        class="form-control"
+        id="No_RM"
+        name="No_RM"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Alamat" class="form-label">Alamat</label>
+      <textarea
+        class="form-control"
+        id="Alamat"
+        rows="3"
+        name="Alamat"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="Jenis_Kelamin" class="form-label">Jenis Kelamin</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Jenis_Kelamin"
+        name="Jenis_Kelamin"
+      />
+    <div class="mb-3">
+      <label for="Pekerjaan" class="form-label">Pekerjaan</label>
+      <input type="text" class="form-control" id="Pekerjaan" name="Pekerjaan" />
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<%- include('../includes/footer'); %>

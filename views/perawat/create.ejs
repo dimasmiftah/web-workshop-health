@@ -1,0 +1,46 @@
+<%- include('../includes/header'); %>
+
+<div class="container">
+  <h1>Create Perawat</h1>
+  <form action="/perawat/create" method="POST">
+    <div class="mb-3">
+      <label for="ID_Perawat" class="form-label">ID Perawat</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ID_Perawat"
+        name="ID_Perawat"
+        disabled
+      />
+    </div>
+    <div class="mb-3">
+      <label for="ID_Poliklinik" class="form-label">ID Poliklinik</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ID_Poliklinik"
+        name="ID_Poliklinik"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Nama" class="form-label">Nama</label>
+      <input type="text" class="form-control" id="Nama" name="Nama" />
+    </div>
+    <div class="mb-3">
+      <label for="Alamat" class="form-label">Alamat</label>
+      <textarea
+        class="form-control"
+        id="Alamat"
+        rows="3"
+        name="Alamat"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="Tgl_Lahir" class="form-label">Tanggal Lahir</label>
+      <input type="date" class="form-control" id="Tgl_Lahir" name="Tgl_Lahir" />
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<%- include('../includes/footer'); %>
