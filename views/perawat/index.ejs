@@ -1,0 +1,45 @@
+<%- include('../includes/header'); %>
+<div class="container">
+  <h1>All Perawat</h1>
+  <a href="/perawat/create">
+    <button class="btn btn-primary">Create Perawat</button>
+  </a>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id_Perawat</th>
+        <th>ID_Poliklinik</th>
+        <th>Nama</th>
+        <th>Alamat</th>
+        <th>Tgl_Lahir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% daftar_perawat.forEach(perawat => { %>
+      <tr>
+        <td><%= perawat.ID_Perawat %></td>
+        <td><%= perawat.ID_Poliklinik %></td>
+        <td><%= perawat.Nama %></td>
+        <td><%= perawat.Alamat %></td>
+        <td><%= perawat.Tgl_Lahir %></td>
+        <td>
+          <div class="">
+            <a href="/perawat/edit/<%= perawat.ID_Perawat %>">
+              <button class="btn btn-primary">Edit</button>
+            </a>
+            <form
+              method="POST"
+              action="/perawat/delete/<%= perawat.ID_Perawat %>"
+            >
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </div>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../includes/footer'); %>

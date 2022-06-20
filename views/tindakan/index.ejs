@@ -1,0 +1,50 @@
+<%- include('../includes/header'); %>
+<div class="container">
+  <h1>All Tindakan</h1>
+  <a href="/tindakan/create">
+    <button class="btn btn-primary">Create Tindakan</button>
+  </a>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>No Registrasi</th>
+        <th>ID Perawat</th>
+        <th>Nama Pasien</th>
+        <th>No Ruang</th>
+        <th>Diagnosa</th>
+        <th>Tindakan Keperawatan</th>
+        <th>Jam</th>
+        <th>Keterangan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% daftar_tindakan.forEach(tindakan => { %>
+      <tr>
+        <td><%= tindakan.No_Registrasi %></td>
+        <td><%= tindakan.ID_Perawat %></td>
+        <td><%= tindakan.Nama_Pasien %></td>
+        <td><%= tindakan.No_Ruang %></td>
+        <td><%= tindakan.Tindakan_Keperawatan %></td>
+        <td><%= tindakan.Jam %></td>
+        <td><%= tindakan.Keterangan %></td>
+        <td>
+          <div class="">
+            <a href="/tindakan/edit/<%= tindakan.No_Registrasi %>">
+              <button class="btn btn-primary">Edit</button>
+            </a>
+            <form
+              method="POST"
+              action="/tindakan/delete/<%= tindakan.No_Registrasi %>"
+            >
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </div>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../includes/footer'); %>
