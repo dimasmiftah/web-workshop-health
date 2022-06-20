@@ -26,4 +26,16 @@ module.exports = {
 
     return res.redirect('/tindakan');
   },
+
+  destroy: async (req, res) => {
+    const tindakan = await Tindakan.findByPk(req.params.id);
+
+    if (!tindakan) {
+      return res.redirect('/tindakan');
+    }
+
+    await tindakan.destroy();
+
+    return res.redirect('/tindakan');
+  },
 };

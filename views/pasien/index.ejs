@@ -1,0 +1,42 @@
+<%- include('../includes/header'); %>
+<div class="container">
+  <h1>All Pasien</h1>
+  <a href="/pasien/create">
+    <button class="btn btn-primary">Create Pasien</button>
+  </a>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>No RM</th>
+        <th>Alamat</th>
+        <th>Jenis Kelamin</th>
+        <th>Pekerjaan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% daftar_pasien.forEach(pasien => { %>
+      <tr>
+        <td><%= pasien.Nama %></td>
+        <td><%= pasien.No_RM %></td>
+        <td><%= pasien.Alamat %></td>
+        <td><%= pasien.Jenis_Kelamin %></td>
+        <td><%= pasien.Pekerjaan %></td>
+        <td>
+          <div class="">
+            <a href="/pasien/edit/<%= pasien.Nama %>">
+              <button class="btn btn-primary">Edit</button>
+            </a>
+            <form method="POST" action="/pasien/delete/<%= pasien.Nama %>">
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </div>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../includes/footer'); %>
