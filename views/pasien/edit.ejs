@@ -1,0 +1,46 @@
+<%- include('../includes/header'); %>
+
+<div class="container">
+  <h2>Edit Pasien <%= pasien.Nama %></h2>
+
+  <form action="/pasien/update/<%= pasien.Nama %>" method="POST">
+
+    <div class="mb-3">
+      <label for="No_RM" class="form-label">No RM</label>
+      <input
+        type="text"
+        class="form-control"
+        id="No_RM"
+        name="No_RM"
+        value="<%= pasien.No_RM %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Alamat" class="form-label">Alamat</label>
+      <textarea
+        class="form-control"
+        id="Alamat"
+        rows="3"
+        name="Alamat"
+      ><%= pasien.Alamat %></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="Jenis_Kelamin" class="form-label">Jenis Kelamin</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Jenis_Kelamin"
+        name="Jenis_Kelamin"
+        value="<%= pasien.Jenis_Kelamin %>"
+      />
+    <div class="mb-3">
+      <label for="Pekerjaan" class="form-label">Pekerjaan</label>
+      <input type="text" class="form-control" id="Pekerjaan" name="Pekerjaan"
+      value="<%= pasien.Pekerjaan %>"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
+<%- include('../includes/footer'); %>
