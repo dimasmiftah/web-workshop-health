@@ -1,0 +1,48 @@
+<%- include('../includes/header'); %>
+
+<div class="container">
+  <h2>Edit Perawat <%= perawat.ID_Perawat %></h2>
+
+  <form action="/perawat/update/<%= perawat.ID_Perawat %>" method="POST">
+    <div class="mb-3">
+      <label for="ID_Poliklinik" class="form-label">ID Poliklinik</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ID_Poliklinik"
+        name="ID_Poliklinik"
+        value="<%= perawat.ID_Poliklinik %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Nama" class="form-label">Nama</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Nama"
+        name="Nama"
+        value="<%= perawat.Nama %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Alamat" class="form-label">Alamat</label>
+      <textarea class="form-control" id="Alamat" rows="3" name="Alamat">
+<%= perawat.Alamat %></textarea
+      >
+    </div>
+    <div class="mb-3">
+      <label for="Tgl_Lahir" class="form-label">Tanggal Lahir</label>
+      <input
+        type="date"
+        class="form-control"
+        id="Tgl_Lahir"
+        name="Tgl_Lahir"
+        value="<%= perawat.Tgl_Lahir %>"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
+<%- include('../includes/footer'); %>

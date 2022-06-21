@@ -1,0 +1,71 @@
+<%- include('../includes/header'); %>
+
+<div class="container">
+  <h2>Edit Tindakan <%= tindakan.No_Registrasi %></h2>
+
+  <form action="/tindakan/update/<%= tindakan.No_Registrasi %>" method="POST">
+    <div class="mb-3">
+      <label for="Id_Perawat" class="form-label">Id_Perawat</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Id_Perawat"
+        name="Id_Perawat"
+        value="<%= tindakan.ID_Perawat %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Nama_Pasien" class="form-label">Nama_Pasien</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Nama_Pasien"
+        name="Nama_Pasien"
+        value="<%= tindakan.Nama_Pasien %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="No_Ruang" class="form-label">No Ruang</label>
+      <input
+        type="text"
+        class="form-control"
+        id="No_Ruang"
+        name="No_Ruang"
+        value="<%= tindakan.No_Ruang %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Tindakan_Keperawatan" class="form-label"
+        >Tindakan_Keperawatan</label
+      >
+      <textarea
+        class="form-control"
+        id="Tindakan_Keperawatan"
+        rows="3"
+        name="Tindakan_Keperawatan"
+      >
+<%= tindakan.Tindakan_Keperawatan %></textarea
+      >
+    </div>
+    <div class="mb-3">
+      <label for="Jam" class="form-label">Jam</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Jam"
+        name="Jam"
+        value="<%= tindakan.Jam %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="Keterangan" class="form-label">Keterangan</label>
+      <textarea class="form-control" id="Keterangan" rows="3" name="Keterangan">
+<%= tindakan.Keterangan %></textarea
+      >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
+<%- include('../includes/footer'); %>

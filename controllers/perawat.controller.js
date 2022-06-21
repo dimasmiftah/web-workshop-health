@@ -25,6 +25,35 @@ module.exports = {
     return res.redirect('/perawat');
   },
 
+  edit: async (req, res) => {
+    const perawat = await Perawat.findByPk(req.params.id);
+
+    if (!perawat) {
+      return res.redirect('/perawat');
+    }
+
+    return res.render('perawat/edit', {
+      perawat,
+    });
+  },
+
+  update: async (req, res) => {
+    const perawat = await Perawat.findByPk(req.params.id);
+
+    if (!perawat) {
+      return res.redirect('/perawat');
+    }
+
+    await perawat.update({
+      ID_Poliklinik: req.body.ID_Poliklinik,
+      Nama: req.body.Nama,
+      Alamat: req.body.Alamat,
+      Tgl_Lahir: req.body.Tgl_Lahir,
+    });
+
+    return res.redirect('/perawat');
+  },
+
   destroy: async (req, res) => {
     const perawat = await Perawat.findByPk(req.params.id);
 
